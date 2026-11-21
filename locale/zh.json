@@ -1,0 +1,6 @@
+{
+  "meta": {
+    "title": "OpenCode Go 用量",
+    "description": "在输入框下方的 composer 区域（上下文环旁）实时显示 OpenCode Go 套餐的 5 小时、每周与每月用量。"
+  }
+}

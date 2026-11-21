@@ -1,0 +1,6 @@
+- insert:
+    - id: opencode-go-usage
+      name: '@local/opencode-go-usage'
+      config:
+        credentialRef: OPENCODE_GO_API_KEY
+        refreshIntervalMs: 30000
