@@ -3,7 +3,7 @@
  *
  * It fills the composer's dock row — the line under the input card that hosts
  * the context meter — with one compact pill that shows how much of this
- * month's allowance is left. Opening it shows a small panel with all three
+ * month's allowance is used. Opening it shows a small panel with all three
  * allowance windows, their reset instants, and a refresh action.
  */
 
@@ -56,7 +56,6 @@ window.__ModuleLoader__.load({
       'daysLeft': 'in {days}d',
       'updated': 'Updated',
       'remaining': '{percent}% left',
-      'monthly.left': '{percent}%',
       'used': '{percent}% used',
       'open': 'Show every OpenCode Go allowance window',
       'aria': 'OpenCode Go plan usage',
@@ -89,7 +88,6 @@ window.__ModuleLoader__.load({
       'daysLeft': '{days} 天后',
       'updated': '更新于',
       'remaining': '剩 {percent}%',
-      'monthly.left': '{percent}%',
       'used': '已用 {percent}%',
       'open': '展开 OpenCode Go 全部额度窗口',
       'aria': 'OpenCode Go 套餐用量',
@@ -353,7 +351,7 @@ window.__ModuleLoader__.load({
         label = h(
           'span',
           { className: `ogu-v${level === 'ok' ? '' : ` is-${level}`}` },
-          format('monthly.left', { percent: formatPercent(100 - monthly.meter.percent) }),
+          format('used', { percent: formatPercent(monthly.meter.percent) }),
         );
       }
 
@@ -415,7 +413,7 @@ window.__ModuleLoader__.load({
                         h(
                           'span',
                           { className: `ogu-row-value${level === 'ok' ? '' : ` is-${level}`}` },
-                          format('remaining', { percent: left }),
+                          format('used', { percent: used }),
                         ),
                       ),
                       h(
@@ -429,7 +427,7 @@ window.__ModuleLoader__.load({
                       h(
                         'div',
                         { className: 'ogu-row-foot' },
-                        h('span', null, format('used', { percent: used })),
+                        h('span', null, format('remaining', { percent: left })),
                         resetText === '' ? null : h('span', null, resetText),
                       ),
                     );

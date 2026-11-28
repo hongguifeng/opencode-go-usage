@@ -1,6 +1,6 @@
 {
   "name": "@local/opencode-go-usage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": true,
   "description": "Shows the OpenCode Go plan usage in the composer dock of the Harness Web UI.",
   "type": "module",
